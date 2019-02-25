@@ -6,7 +6,7 @@
 4. ? Install vue-router? (Y/n)        ------------Yes
 5. ? Use ESLint to lint your code? (Y/n)        ------------是否启用eslint检测规则
 6. ? Set up unit tests (Y/n)        ------------是否安装单元测试
-7. Setup e2e tests with Nightwatch? (Y/n)        ------------Yes
+7. Setup e2e tests with Nightwatch? (Y/n)        ------------是否设置e2e测试
 8. Should we run `npm install` for you after the project has been created? (recommended)        ------------是否需要运行"npm install"
 9. $ cd my-project         ------------进入项目
 10. $ npm install         ------------安装依赖
@@ -24,4 +24,19 @@ new HtmlWebpackPlugin({
   inject: true,
   favicon: path.resolve('favicon.ico')   // 加上这个
 })
+```
+#### 四、使用sass
+1. 运行命令 `$ npm install sass-loader node-sass vue-style-loader --D`
+2. 打开build文件夹下面的webpack.base.config.js文件，在module理添加：
+```
+{ 
+  test: /\.scss$/,
+  loaders: ["style", "css", "sass"]
+}
+```
+3. 使用：
+```
+<style lang="scss">
+  $color: #333;
+</style>
 ```
