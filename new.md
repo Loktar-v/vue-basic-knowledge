@@ -142,3 +142,15 @@ Vue.component('icon-svg', IconSvg)
 ```
 <svg-icon iconClass = "iconName"></svg-icon>
 ```
+#### 七、对svg图片优化
+**** SVGO ****
+1. 运行`$ npm install -g svgo`
+2. 实例：
+```
+1. 单个文件使用
+$ svgo test.svg
+$ svgo test.svg test.min.svg
+2. 文件夹使用
+$ svgo -f icons
+$ svgo -f icons icons-more
+```
