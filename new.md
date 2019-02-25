@@ -61,7 +61,7 @@ Vue.use(ElementUI)
 #### 六、引入第三方icon iconfont symbol
 1. 创建组件SvgIcon
 ```
-// //components/Icon-svg
+// components/Icon-svg
 <template>
   <svg :class="svgClass" aria-hidden="true">
     <use :xlink:href="iconName"/>
@@ -106,7 +106,7 @@ export default {
 }
 </style>
 ```
-2. 在src目录下创建icon文件夹将icon放置其中
+2. 在src目录下创建icons文件夹将icon放置其中
 ```
 //引入svg组件
 import IconSvg from '@/components/IconSvg'
@@ -138,7 +138,7 @@ Vue.component('icon-svg', IconSvg)
   }
 }
 ```
-5. 使用icon
+5. 使用icon,如果不能生效就重新安装一下依赖并运行项目
 ```
 <svg-icon iconClass = "iconName"></svg-icon>
 ```
