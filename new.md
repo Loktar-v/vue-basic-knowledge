@@ -58,3 +58,87 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)
 ```
+#### 六、引入第三方icon iconfont symbol
+1. 创建组件SvgIcon
+```
+// //components/Icon-svg
+<template>
+  <svg :class="svgClass" aria-hidden="true">
+    <use :xlink:href="iconName"/>
+  </svg>
+</template>
+
+<script>
+export default {
+  name: 'SvgIcon',
+  props: {
+    iconClass: {
+      type: String,
+      required: true
+    },
+    className: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    iconName() {
+      return `#icon-${this.iconClass}`
+    },
+    svgClass() {
+      if (this.className) {
+        return 'svg-icon ' + this.className
+      } else {
+        return 'svg-icon'
+      }
+    }
+  }
+}
+</script>
+
+<style scoped>
+.svg-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+</style>
+```
+2. 在src目录下创建icon文件夹将icon放置其中
+```
+//引入svg组件
+import IconSvg from '@/components/IconSvg'
+
+//全局注册icon-svg
+Vue.component('icon-svg', IconSvg)
+```
+3. 在main.js中引入 `import './icons'`
+4. 打开build文件夹下面的webpack.base.config.js文件，在module中添加：
+```
+{
+  test: /\.svg$/,
+  loader: 'svg-sprite-loader',
+  include: [resolve('src/icons')],
+  options: {
+    symbolId: 'icon-[name]'
+  }
+}
+```
+```
+// 向其中添加 exclude: [resolve('src/icons')],
+{
+  test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+  loader: 'url-loader',
+  exclude: [resolve('src/icons')],
+  options: {
+    limit: 10000,
+    name: utils.assetsPath('media/[name].[hash:7].[ext]')
+  }
+}
+```
+5. 使用icon
+```
+<svg-icon iconClass = "iconName"></svg-icon>
+```
