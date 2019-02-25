@@ -1,5 +1,5 @@
-###### 安装node、npm、vue-cli脚手架
-###### 新建命令：vue init webpack my-project
+#### 安装node、npm、vue-cli脚手架
+#### 新建命令：vue init webpack my-project
 1. ? Project name (my-project)  ---项目名称
 2. ? Project description (A Vue.js project)   ---项目描述
 3. Author (loktar <******@gmail.com>)  ---项目创建者
@@ -11,7 +11,7 @@
 9. $ cd my-project    ---进入项目
 10. $ npm install    ---安装依赖
 11. $ npm run dev    ---项目运行
-###### 设置网页title小图标
+#### 设置网页title小图标
 1. 将favicon.ico放到static文件夹下，在index.html中加入
 `<link rel="icon" href="./static/favicon.ico" type="image/x-icon">`
 2. 在build/webpack.dev.conf.js
