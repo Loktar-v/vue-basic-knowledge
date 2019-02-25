@@ -27,16 +27,34 @@ new HtmlWebpackPlugin({
 ```
 #### 四、使用sass
 1. 运行命令 `$ npm install sass-loader node-sass vue-style-loader --D`
-2. 打开build文件夹下面的webpack.base.config.js文件，在module理添加：
+2. 打开build文件夹下面的webpack.base.config.js文件，在module中添加：
 ```
 { 
   test: /\.scss$/,
   loaders: ["style", "css", "sass"]
 }
 ```
-3. 使用：
+3. 页面中使用方法
 ```
 <style lang="scss">
   $color: #333;
 </style>
+```
+#### 五、引入Element
+1. 运行命令 `npm install element-ui`
+2. 安装loader模块
+```
+npm install style-loader -D
+npm install css-loader -D
+npm install file-loader -D
+```
+3. 安装Element-UI模块
+```
+npm install element-ui
+```
+4. 在./src/main.js中引入ELement
+```
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI)
 ```
