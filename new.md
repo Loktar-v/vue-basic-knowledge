@@ -168,3 +168,36 @@ $ svgo test.svg test.min.svg
 $ svgo -f icons
 $ svgo -f icons icons-more
 ```
+#### 九、设置alias别名
+vue项目，文件与文件的引用较多，关系比较复杂，可以使用alias来简化、理顺。在`webpack.base.conf.js`文件中可以为一些常用的目录文件设置简短的别名。
+```
+resolve: {
+  extensions: ['.js', '.vue', '.json'],
+  alias: {
+    'vue$': 'vue/dist/vue.esm.js',
+    '@': resolve('src'),
+    '@components': resolve('src/components'),
+  }
+}
+
+* extensions代表的是带这种后缀的文件可以自动解析，引入的时候不用写后缀
+// 使用
+import HelloWorld form '@/components/HelloWorld'
+```
+也可以多加一些设置，主要看个人喜好
+```
+alias: {
+  'src': path.resolve(__dirname, '../src'),
+  'components': path.resolve(__dirname, '../src/components'),
+  'api': path.resolve(__dirname, '../src/api'),
+  'utils': path.resolve(__dirname, '../src/utils'),
+  'store': path.resolve(__dirname, '../src/store'),
+  'router': path.resolve(__dirname, '../src/router')
+}
+
+//使用
+import stickTop from 'components/stickTop'
+import getArticle from 'api/article'
+```
+
+
