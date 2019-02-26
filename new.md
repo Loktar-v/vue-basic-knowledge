@@ -145,6 +145,17 @@ Vue.component('icon-svg', IconSvg)
 #### 七、iconfont导出svg图片
 1. 搜索需要的图标
 ![搜索](/img/shousuo.png)
+2. 添加图标入库（购物车图标）
+![添加入库](/img/add-resq.png)
+3. 添加至项目或者新建项目
+![添加至项目](/img/new.png)
+![添加至项目](/img/new2.png)
+4. 点击Symbol，对图标编辑--仅保存
+![添加至项目](/img/edit.png)
+![添加至项目](/img/Just-save.png)
+5. 对图标进行去色
+![添加至项目](/img/quse.png)
+6. 下载保存
 #### 八、对svg图片优化
 *SVGO*
 1. 运行`$ npm install -g svgo`
