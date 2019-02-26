@@ -144,7 +144,7 @@ Vue.component('icon-svg', IconSvg)
 ```
 #### 七、iconfont导出svg图片
 1. 搜索需要的图标
-[!图片]('./img/shousuo.png')
+[!图片]('/img/shousuo.png')
 #### 八、对svg图片优化
 *SVGO*
 1. 运行`$ npm install -g svgo`
